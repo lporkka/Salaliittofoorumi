@@ -1,4 +1,7 @@
 # Salaliittofoorumi
 ## Kuvaus
-Tarkoituksena on tehdä foorumi salaliittoaiheisille keskusteluille. Ominaisuuksiin kuuluvat käyttäjätunnukset, ryhmät joihin tunnukset voivat kuulua ja "langat" joihin voi kirjoittaa lisää "postauksia". 
+Tarkoituksena on tehdä foorumi salaliittoaiheisille keskusteluille. Ominaisuuksiin kuuluvat käyttäjätunnukset, ryhmät joihin tunnukset voivat kuulua ja postaukset, jotka voivat myös olla vastauksia toisiin postauksiin. Postaukset on jaoteltu aiheisiin, joita admin voi lisätä. 
+
+[Tietokantasuunnitelma](https://github.com/lporkka/Salaliittofoorumi/blob/master/documentation/KaavioV2.png)
+[Salaliittofoorumi](https://salaliittofoorumi.herokuapp.com/) 
 
