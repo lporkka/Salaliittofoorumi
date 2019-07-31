@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>Post</th>
+    </tr>
+    {% for post in posts %}
+    <tr>
+      <td>{{ post.header }}</td>
+      <td>{{ post.date_created }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
