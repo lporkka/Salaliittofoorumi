@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>TodoApp</title>
-  </head>
 
-  <body>
-	<a href="{{ url_for('posts_index') }}">ALL POSTS</a>
-	</br>
-	<a href="{{ url_for('posts_form') }}">Add a post</a>
+<head>
+  <meta charset="utf-8">
+  <title>TodoSalaliittofoorumi</title>
+</head>
 
-    {% block body %}
-      <p>
-        Content.
-      </p>
-    {% endblock %}
-  </body>
+<body>
+  <a href="{{ url_for('posts_index') }}">ALL POSTS</a>
+  </br>
+  <a href="{{ url_for('posts_form') }}">Add a post</a>
+
+  {% block body %}
+  <p>
+    Content.
+  </p>
+  {% endblock %}
+</body>
+
 </html>
