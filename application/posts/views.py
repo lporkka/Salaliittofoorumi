@@ -11,11 +11,13 @@ def posts_index():
 
 
 @app.route("/posts/new/")
+@login_required
 def posts_form():
     return render_template("posts/new.html", form=PostForm())
 
 
 @app.route("/posts/", methods=["POST"])
+@login_required
 def posts_create():
     form = PostForm(request.form)
 
