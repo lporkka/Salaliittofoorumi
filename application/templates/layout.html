@@ -7,9 +7,19 @@
 </head>
 
 <body>
-  <a href="{{ url_for('posts_index') }}">ALL POSTS</a>
-  </br>
-  <a href="{{ url_for('posts_form') }}">Add a post</a>
+  {% if current_user.is_authenticated %}
+  <p>
+    Kirjautunut nimellä {{ current_user.name }}. <a href="{{ url_for('auth_logout') }}">Kirjaudu ulos</a>
+  </p>
+  </p>
+  {% else %}
+  <a href="{{ url_for('auth_login') }}">Kirjaudu</a>
+  {% endif %}
+  <ul>
+    <li><a href="{{ url_for('posts_index') }}">ALL POSTS</a></li>
+    <li><a href="{{ url_for('posts_form') }}">Add a post</a></li>
+  </ul>
+
 
   {% block body %}
   <p>

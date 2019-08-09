@@ -19,6 +19,9 @@ def posts_form():
 def posts_create():
     form = PostForm(request.form)
 
+    if not form.validate():
+        return render_template("posts/new.html", form=form)
+
     p = Post(form.content.data)
 
     db.session().add(p)
