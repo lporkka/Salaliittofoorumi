@@ -14,12 +14,12 @@
   </p>
   {% else %}
   <a href="{{ url_for('auth_login') }}">Kirjaudu</a>
+  <a href="{{ url_for('auth_register') }}">Rekisteröidy</a>
   {% endif %}
   <ul>
-    <li><a href="{{ url_for('posts_index') }}">ALL POSTS</a></li>
-    <li><a href="{{ url_for('posts_form') }}">Add a post</a></li>
+    <li><a href="{{ url_for('threads_index') }}">ALL THREADS</a></li>
+    <li><a href="{{ url_for('threads_form') }}">ADD A THREAD</a></li>
   </ul>
-
 
   {% block body %}
   <p>

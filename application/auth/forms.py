@@ -8,3 +8,12 @@ class LoginForm(FlaskForm):
 
     class Meta:
         csrf = False
+
+
+class RegisterForm(FlaskForm):
+    givename = StringField("Name")
+    giveusername = StringField("Username")
+    givepassword = PasswordField("Password")
+
+    class Meta:
+        csrf = False

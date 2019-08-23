@@ -16,8 +16,8 @@ db = SQLAlchemy(app)
 from application import views
 
 from application.posts import models, views
-
 from application.auth import models, views
+from application.threads import models, views
 
 # login
 from application.auth.models import User

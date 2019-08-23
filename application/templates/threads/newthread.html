@@ -1,14 +1,14 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<form method="POST" action="{{ url_for('posts_create') }}">
+<form method="POST" action="{{ url_for('threads_create') }}">
 	<table>
 		<tr>
 			<td>
-				{{ form.content.label }}
+				{{ form.header.label}}
 			</td>
 			<td>
-				{{ form.content }}
+				{{ form.header}}
 			</td>
 			<td>
 				<ul>
@@ -16,6 +16,14 @@
 					<li>{{ error }}</li>
 					{% endfor %}
 				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				{{ form.content.label }}
+			</td>
+			<td>
+				{{ form.content }}
 			</td>
 		</tr>
 		<tr>

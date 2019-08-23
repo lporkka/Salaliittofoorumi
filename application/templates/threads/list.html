@@ -3,11 +3,11 @@
 {% block body %}
 <table>
   <tr>
-    <th>Post</th>
+    <th>Threads</th>
   </tr>
-  {% for post in posts %}
+  {% for thread in threads %}
   <tr>
-    <td>{{ post.date_created }}</td>
+    <td>{{ thread.date_created }}</td>
   </tr>
   {% endfor %}
 </table>

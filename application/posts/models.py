@@ -1,15 +1,17 @@
 from application import db
+from application.models import Base
 
 
-class Post(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    date_created = db.Column(db.DateTime, default=db.func.current_timestamp())
+class Post(Base):
+    __tablename__ = "post"
 
     content = db.Column(db.String, nullable=False)
-
     account_id = db.Column(db.Integer,
                            db.ForeignKey('account.id'),
                            nullable=False)
+    thread_id = db.Column(db.Integer,
+                          db.ForeignKey('thread.id'),
+                          nullable=False)
 
     def __init__(self, content):
         self.content = content
