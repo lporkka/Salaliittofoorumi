@@ -1,3 +1,4 @@
+import logging
 from flask import render_template, request, url_for, redirect
 from flask_login import login_required, current_user
 
@@ -35,8 +36,6 @@ def threads_create():
     p = Post(form.content.data)
     p.account_id = current_user.id
     p.thread_id = Thread.find_by_name(t.header)
-
     db.session().add(p)
     db.session().commit()
-
     return redirect(url_for("threads_index"))

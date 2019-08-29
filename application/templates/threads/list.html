@@ -1,12 +1,15 @@
 {% extends "layout.html" %}
 
 {% block body %}
+<h1>Threads</h1>
 <table>
   <tr>
-    <th>Threads</th>
+    <th>Otsikko</th>
+    <th>Luotu</th>
   </tr>
   {% for thread in threads %}
   <tr>
+    <td>{{ thread.header }}</td>
     <td>{{ thread.date_created }}</td>
   </tr>
   {% endfor %}
