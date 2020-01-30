@@ -1,15 +1,17 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<h1>Threads</h1>
+<h1>Ketjut</h1>
 <table>
   <tr>
     <th>Otsikko</th>
+    <th></th>
     <th>Luotu</th>
   </tr>
   {% for thread in threads %}
   <tr>
-    <td>{{ thread.header }}</td>
+    <td><a href="{{ url_for('get_thread', thread_id = thread.id)}}">{{ thread.header }}</a></td>
+    <td></td>
     <td>{{ thread.date_created }}</td>
   </tr>
   {% endfor %}

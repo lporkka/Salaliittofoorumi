@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for
-from flask_login import login_user, logout_user
+from flask_login import login_user, logout_user, current_user
 
-from application import app, db
+from application import app, db, login_required
 from application.auth.models import User
 from application.auth.forms import LoginForm, RegisterForm
 
@@ -45,6 +45,16 @@ def auth_register():
 
 
 @app.route("/auth/logout")
+@login_required(False)
 def auth_logout():
     logout_user()
+    return redirect(url_for("index"))
+
+
+@app.route("/upgrade")
+@login_required(False)
+def upgrade_account():
+    u = db.session.query(User).get(current_user.id)
+    u.admin = True
+    db.session().commit()
     return redirect(url_for("index"))

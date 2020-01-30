@@ -1,5 +1,5 @@
 from flask import render_template, request, url_for, redirect
-from flask_login import login_required
+from flask_login import login_required, current_user
 
 from application import app, db
 from application.posts.models import Post
@@ -21,13 +21,12 @@ def posts_form():
 @login_required
 def posts_create():
     form = PostForm(request.form)
-
-    if not form.validate():
-        return render_template("posts/new.html", form=form)
-
-    p = Post(form.content.data)
+    thread_id = int(request.args.get('thread_id'))
+    p = Post(form.content.data,
+             account_id=current_user.id,
+             thread_id=thread_id)
 
     db.session().add(p)
     db.session().commit()
 
-    return redirect(url_for("posts_index"))
+    return redirect(url_for("get_thread", thread_id=thread_id))

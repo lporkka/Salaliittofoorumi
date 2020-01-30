@@ -13,5 +13,7 @@ class Post(Base):
                           db.ForeignKey('thread.id'),
                           nullable=False)
 
-    def __init__(self, content):
+    def __init__(self, content, account_id, thread_id):
         self.content = content
+        self.account_id = account_id
+        self.thread_id = thread_id

@@ -1,7 +1,19 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<p>
-  Hello world!
-</p>
+<h1>Ketjut</h1>
+<table>
+  <tr>
+    <th>Otsikko</th>
+    <th></th>
+    <th>Luotu</th>
+  </tr>
+  {% for thread in threads %}
+  <tr>
+    <td>{{ thread.header }}</td>
+    <td></td>
+    <td>{{ thread.date_created }}</td>
+  </tr>
+  {% endfor %}
+</table>
 {% endblock %}
